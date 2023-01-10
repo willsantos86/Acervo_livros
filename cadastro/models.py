@@ -25,11 +25,9 @@ class Livro(models.Model):
 class Emprestimo(models.Model):
     cliente = models.ForeignKey(Cliente,verbose_name='Cliente', on_delete=models.CASCADE)
     livro = models.ForeignKey(Livro,verbose_name='Livro', on_delete=models.CASCADE )
-    data_retirada = models.DateTimeField(verbose_name='Data de Retirada', auto_now_add=True) 
+    data_retirada = models.DateField(verbose_name='Data de Retirada') 
     data_entrega = models.DateField(verbose_name='Data de Entrega')
     dias_atraso = models.IntegerField(verbose_name='Dias de Atraso')
     observacao = models.TextField(verbose_name='Observação', blank=True)
-
-
 
 
