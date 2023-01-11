@@ -8,7 +8,7 @@ class Cliente(models.Model):
     telefone = models.CharField(max_length=14, verbose_name='Telefone')
 
     def __str__(self):
-        return f'{self.nome} - Tel: {self.telefone}'
+        return f'{self.nome}'
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
@@ -23,7 +23,7 @@ class Livro(models.Model):
     observacao = models.TextField(verbose_name='Observação',blank=True)
 
     def __str__(self):
-        return f'{self.titulo.upper()} - (Autor: {self.autor} - Edição: {self.edicao})'
+        return f'{self.titulo.upper()} - {self.autor}'
     class Meta:
         verbose_name = 'Livro'
         verbose_name_plural = 'Livros'
@@ -32,8 +32,8 @@ class Livro(models.Model):
 
 class Emprestimo(models.Model):
     
-    cliente = models.ForeignKey(Cliente,verbose_name='Cliente', on_delete=models.CASCADE)
-    livro = models.ForeignKey(Livro,verbose_name='Livro', on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente,verbose_name='Nome do Cliente', on_delete=models.CASCADE)
+    livro = models.ForeignKey(Livro,verbose_name='Título/Autor do Livro', on_delete=models.CASCADE)
     data_retirada = models.DateField(verbose_name='Data de Retirada') 
     data_entrega_prevista = models.DateField(verbose_name='Previsão Entrega')
     observacao = models.TextField(verbose_name='Observação', blank=True)
