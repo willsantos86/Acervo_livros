@@ -8,7 +8,11 @@ class Cliente(models.Model):
     telefone = models.CharField(max_length=14, verbose_name='Telefone')
 
     def __str__(self):
-        return f'{self.nome} (Tel: {self.telefone})'
+        return f'{self.nome} - Tel: {self.telefone}'
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+        ordering = ['nome']
 
 
 class Livro(models.Model):
@@ -20,6 +24,10 @@ class Livro(models.Model):
 
     def __str__(self):
         return f'{self.titulo.upper()} - (Autor: {self.autor} - Edição: {self.edicao})'
+    class Meta:
+        verbose_name = 'Livro'
+        verbose_name_plural = 'Livros'
+        ordering = ['titulo']
 
 
 class Emprestimo(models.Model):
@@ -32,6 +40,10 @@ class Emprestimo(models.Model):
     
     def __str__(self):
         return f'{self.cliente()} - (Livro: {self.livro} - Data Retirada: {self.data_retirada})'
+    class Meta:
+        verbose_name = 'Emprestimo'
+        verbose_name_plural = 'Emprestimos'
+        ordering = ['cliente']
 
 
 
