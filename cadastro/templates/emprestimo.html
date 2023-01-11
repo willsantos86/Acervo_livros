@@ -13,17 +13,17 @@
       <main>
         <div class="card w-75 mb-3 mt-5 m-auto" style="background: rgb(21, 39, 51);">
           <div class="card-body m-auto" style="color: white;">
-            <h2 class="card-title">Registro de Empréstimo</h2>
-            <p class="card-text">Preencha o formulário abaixo.</p>
+            <h2 class="card-title" style="font-family:'Times New Roman', Times, serif;">Registro de Empréstimo</h2>
+            <p class="card-text" style="font-family:'Times New Roman', Times, serif;">Preencha o formulário abaixo.</p>
             {% if sucesso %}
             <p class="alert alert-success">Mensagem enviada com sucesso!</p>
             {% else %}
             <br>
-            <form action="" method="post" novalidate style="font-size: 15px;">
+            <form action="" method="post" novalidate style="font-size: 17px; font-family:'Times New Roman', Times, serif;">
                 {% csrf_token %}
                 {% bootstrap_form form %}
               <hr>
-                <button class="save btn btn-primary" type="submit">Enviar Mensagem</button>
+                <button class="save btn btn-primary" type="submit" style="font-family:'Times New Roman', Times, serif;">Enviar Mensagem</button>
             </form>
             {% endif %}
           </div>

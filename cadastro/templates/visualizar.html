@@ -10,29 +10,33 @@
   </head>
   <body style="background-image: linear-gradient(to right, black , rgb(8, 48, 74));">
     <div class="card w-75 mb-3 mt-5 m-auto" style="background: rgb(21,39,51);color: white;">
-        <h2 class="pt-4" style="text-align: center;">Lista de emprestimos</h2>
+        <h2 class="pt-4" style="text-align: center; font-family:'Times New Roman', Times, serif;">Lista de emprestimos</h2>
         <div class="card-body m-auto" style="color: white;"></div>
             <div class="table-responsive" style="color: white;">
                 <table class="table" style="color: white;">
-                    <tr style="text-align: center;color: white;">
+                    <tr style="text-align: center;color: white; font-family:'Times New Roman', Times, serif;">
                         <th>Cliente</th>
                         <th>Titulo/Autor</th>
                         <th>Data de Retirada</th>
                         <th>Previsão Entrega</th>
-                        <th>Observação</th>
+                        <!-- <th>Observação</th> -->
                         <th>Editar</th>
                         <th>Deletar</th>
 
                     </tr>
                     {% for emprestimo in lista_emprestimos %} 
-                    <tr style="font-size: 14px;">
+                    <tr style="font-size: 14px; text-align: center; font-family:'Times New Roman', Times, serif;">
                         <td>{{ emprestimo.cliente }}</td>
                         <td>{{ emprestimo.livro }}</td>
                         <td>{{ emprestimo.data_retirada }}</td>
                         <td>{{ emprestimo.data_entrega_prevista }}</td>
-                        <td>{{ emprestimo.observacao }}</td>
-                        <td><a href="{% url 'editar' emprestimo.id %}">Editar</a></td>
-                        <td><a href="{% url 'deletar' emprestimo.id %}">Deletar</a></td>
+                       <!--  <td>{{ emprestimo.observacao }}</td> -->
+                        <td><a href="{% url 'editar' emprestimo.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                          </svg></a></td>
+                        <td><a href="{% url 'deletar' emprestimo.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                          </svg></a></td>
                     </tr>
                     {% endfor %} 
                 </table>
