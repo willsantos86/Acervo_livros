@@ -17,7 +17,8 @@
                         <th>Cliente</th>
                         <th>Livro</th>
                         <th>Data de Retirada</th>
-                        <th>Data de Entrega</th>
+                        <th>Previsão Entrega</th>
+                        <th>Entrega</th>
                         <th>Observação</th>
                     </tr>
                     {% for emprestimo in lista_emprestimos %} 
@@ -25,6 +26,7 @@
                         <td>{{ emprestimo.cliente }}</td>
                         <td>{{ emprestimo.livro }}</td>
                         <td>{{ emprestimo.data_retirada }}</td>
+                        <td>{{ emprestimo.data_entrega_prevista }}</td>
                         <td>{{ emprestimo.data_entrega }}</td>
                         <td>{{ emprestimo.observacao }}</td>
                     </tr>

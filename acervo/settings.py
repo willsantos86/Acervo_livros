@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'acervo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'acervolivros',
+        'NAME': 'emprestimolivros',
         'USER': 'postgres',
         'PASSWORD': '#Willi@m86',
         'HOST': 'localhost',

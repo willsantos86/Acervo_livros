@@ -7,6 +7,6 @@ class EmprestimoForm(forms.ModelForm):
     class Meta:
         model = Emprestimo
         fields = [
-            'cliente', 'livro', 'data_retirada', 'data_entrega', 'observacao'
+            'cliente', 'livro', 'data_retirada', 'data_entrega_prevista', 'data_entrega', 'observacao'
         ]
         
