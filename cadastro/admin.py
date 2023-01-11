@@ -14,7 +14,7 @@ class LivroAdmin(admin.ModelAdmin):
     list_filter = ['titulo']
 
 class EmprestimoAdmin(admin.ModelAdmin):
-    list_display = ['cliente', 'livro', 'data_retirada', 'data_entrega', 'observacao']
+    list_display = ['cliente', 'livro', 'data_retirada', 'observacao']
     search_fields = ['cliente', 'livro', 'data_retirada', 'data_entrega']
     list_filter = ['data_retirada']
 

@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from cadastro.views import *
 
+
+app_name = 'cadastro'
+
 urlpatterns = [
-    path('visualizar/', visualizar),
-    path('', emprestimo),
+    path('deletar/<int:pk>/', deletar, name='deletar'),
+    path('editar/<int:pk>/', editar, name='editar'),
+    path('visualizar/', visualizar, name='visualizar'),
+    path('', emprestimo, name='emprestimo'),
     path('admin/', admin.site.urls),
 ]

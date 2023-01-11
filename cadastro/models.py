@@ -36,7 +36,6 @@ class Emprestimo(models.Model):
     livro = models.ForeignKey(Livro,verbose_name='Livro', on_delete=models.CASCADE)
     data_retirada = models.DateField(verbose_name='Data de Retirada') 
     data_entrega_prevista = models.DateField(verbose_name='Previsão Entrega')
-    data_entrega = models.DateField(verbose_name='Entrega')
     observacao = models.TextField(verbose_name='Observação', blank=True)
     
     def __str__(self):

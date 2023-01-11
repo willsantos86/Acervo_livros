@@ -18,8 +18,10 @@
                         <th>Livro</th>
                         <th>Data de Retirada</th>
                         <th>Previsão Entrega</th>
-                        <th>Entrega</th>
                         <th>Observação</th>
+                        <th>Editar</th>
+                        <th>Deletar</th>
+
                     </tr>
                     {% for emprestimo in lista_emprestimos %} 
                     <tr>
@@ -27,8 +29,9 @@
                         <td>{{ emprestimo.livro }}</td>
                         <td>{{ emprestimo.data_retirada }}</td>
                         <td>{{ emprestimo.data_entrega_prevista }}</td>
-                        <td>{{ emprestimo.data_entrega }}</td>
                         <td>{{ emprestimo.observacao }}</td>
+                        <td><a href="{% url 'editar' emprestimo.id %}">Editar</a></td>
+                        <td><a href="{% url 'deletar' emprestimo.id %}">Deletar</a></td>
                     </tr>
                     {% endfor %} 
                 </table>
