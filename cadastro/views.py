@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect
 from cadastro.forms import *
 
 # Create your views here.
+
+def inicio(request):
+    return render(request,'inicio.html')
+
+    
 def emprestimo(request):
     sucesso = False
     form = EmprestimoForm(request.POST or None)
@@ -20,6 +25,7 @@ def visualizar(request):
     context = {'lista_emprestimos': lista_emprestimos }
     return render(request,'visualizar.html', context)
 
+
 def editar(request, pk):
     emprestimo = Emprestimo.objects.get(id=pk)
     form = EmprestimoForm(instance= emprestimo)
@@ -32,6 +38,7 @@ def editar(request, pk):
             form.save()
             return redirect('cadastro:visualizar')
     return render(request, 'editar.html', context)
+
 
 def deletar(request, pk):
     emprestimo = Emprestimo.objects.get(id=pk)

@@ -21,9 +21,10 @@ from cadastro.views import *
 app_name = 'cadastro'
 
 urlpatterns = [
+    path('', inicio, name='inicio'),
     path('deletar/<int:pk>/', deletar, name='deletar'),
     path('editar/<int:pk>/', editar, name='editar'),
     path('visualizar/', visualizar, name='visualizar'),
-    path('', emprestimo, name='emprestimo'),
+    path('emprestimo/', emprestimo, name='emprestimo'),
     path('admin/', admin.site.urls),
 ]
