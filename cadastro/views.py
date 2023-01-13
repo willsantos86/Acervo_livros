@@ -44,6 +44,8 @@ def visualizar(request):
     lista_emprestimos = Emprestimo.objects.all()
     context = {'lista_emprestimos': lista_emprestimos }
     return render(request,'visualizar.html', context)
+     
+
 
 
 def editar(request, pk):
@@ -59,8 +61,12 @@ def editar(request, pk):
             return redirect('cadastro:visualizar')
     return render(request, 'editar.html', context)
 
-
 def deletar(request, pk):
+    emprestimo = Emprestimo.objects.get(id=pk)
+    emprestimo.delete()
+    return redirect('visualizar')
+
+""" def deletar(request, pk):
     emprestimo = Emprestimo.objects.get(id=pk)
     context = {'emprestimo': emprestimo }
 
@@ -69,3 +75,4 @@ def deletar(request, pk):
         return redirect('cadastro:visualizar')
     return render(request, 'deletar.html', context)
 
+ """
