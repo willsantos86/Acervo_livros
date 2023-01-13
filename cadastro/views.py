@@ -4,9 +4,29 @@ from cadastro.forms import *
 # Create your views here.
 
 def inicio(request):
-    return render(request,'inicio.html')
+    dados = []
+    dados.append (
+        {
+            'destaque': 'Destaque',
+            'titulo': 'Cabeça Fria Coração Quente',
+            'autor': 'Abel Ferreira',
+            'trecho': 'Uma viagem pelos bastidores da equipe tecnica.'
+        }
+    )
+    dados.append (
+        {
+            'destaque': 'Destaque',
+            'titulo': 'Python e Django',
+            'autor': 'Francisco Marcelo',
+            'trecho': 'Desenvolvimento web moderno e ágil.'
+        }
+    )
+    contexto = {
+        'dados': dados
+    }
+    return render(request,'inicio.html', contexto)
 
-    
+
 def emprestimo(request):
     sucesso = False
     form = EmprestimoForm(request.POST or None)
