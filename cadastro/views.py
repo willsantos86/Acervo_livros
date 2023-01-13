@@ -10,7 +10,7 @@ def inicio(request):
             'destaque': 'Destaque',
             'titulo': 'Cabeça Fria Coração Quente',
             'autor': 'Abel Ferreira',
-            'trecho': 'Uma viagem pelos bastidores da equipe tecnica.'
+            'trecho': 'Uma viagem pelos bastidores da equipa tecnica: Segredos, reflexões e metodos de trabalho revelados em primeira pessoa.'
         }
     )
     dados.append (
