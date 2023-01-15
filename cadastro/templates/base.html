@@ -34,32 +34,25 @@
   <body>
     
 <div class="container">
-  <header class="blog-header py-3">
+  <header class="blog-header py-3 mb-1 rounded bg-dark">
     <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 text-center">
-        <h6 class="blog-header-logo text-dark fst-italic">Sistema Biblioteca</h6>
+      <div class="col-lg-12 text-center">
+        <h6 class="blog-header-logo text-white fst-italic ">Biblioteca Pública</h6>
       </div>
     </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
+  <div class="nav-scroller  mb-1 bg-dark">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary fst-italic" href="{% url 'inicio' %}">Inicio</a>
-      <a class="p-2 link-secondary fst-italic" href="{% url 'emprestimo' %}">Registrar Serviço</a>
-      <a class="p-2 link-secondary fst-italic" href="{% url 'visualizar' %}">Visualizar</a>
+      <a class="p-2 link-secondary fst-italic" style="color: white;" href="{% url 'inicio' %}">Inicio</a>
+      <a class="p-2 link-secondary fst-italic" style="color: white;" href="{% url 'emprestimo' %}">Registrar Serviço</a>
+      <a class="p-2 link-secondary fst-italic" style="color: white;" href="{% url 'visualizar' %}">Visualizar</a>
       <!-- <a class="p-2 link-secondary" href="#">Deletar</a>
       <a class="p-2 link-secondary" href="#">Deletar</a> -->
     </nav>
   </div>
 </div>
 
-<main class="container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Biblioteca Camaçari</h1>
-    </div>
-  </div>
-  <div class="row mb-2">
     {% block conteudo %}
 
     {% endblock %}

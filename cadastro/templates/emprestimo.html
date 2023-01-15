@@ -3,21 +3,29 @@
 {% load bootstrap5 %}
 
 {% block conteudo %}
-          </div>
-        </div>
-        <div class="row m-2">
-          <div class="col-md-6">
-            {% if sucesso %}
-            <p class="alert alert-success">Mensagem enviada com sucesso!</p>
-            {% else %}
-            <form action="" method="post" novalidate class="fst-italic">
-              {% csrf_token %}
-              {% bootstrap_form form %}
-              <hr>
-              <button class="save btn btn-primary" type="submit" style="font-family:'Times New Roman', Times, serif;">Enviar Mensagem</button>
-            </form>
-            {% endif %}
-           </div>
-        </div>
-      </main> 
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white border rounded" style="background: rgb(242, 243, 244)">
+    <div class="col-lg-12 text-center">
+      <h1 class="display-4 fst-italic" style="text-align: center;color: black;">Empréstimo</h1>
+    </div>
+  </div>
+  <div class="row mb-2">
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-md-8 m-auto">
+      {% if sucesso %}
+      <p class="alert alert-success">Mensagem enviada com sucesso!</p>
+      {% else %}
+      <form action="" method="post" novalidate class="fst-italic col-lg-12 m-auto">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <hr>
+        <button class="save btn btn-primary" type="submit" style="font-family:'Times New Roman', Times, serif;">Enviar Mensagem</button>
+      </form>
+      {% endif %}
+      </div>
+  </div>
+</main> 
 {% endblock%}
