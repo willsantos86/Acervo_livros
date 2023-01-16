@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from cadastro.forms import *
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -42,7 +43,11 @@ def emprestimo(request):
 
 def visualizar(request):
     lista_emprestimos = Emprestimo.objects.all()
-    context = {'lista_emprestimos': lista_emprestimos }
+
+    paginator = Paginator(lista_emprestimos, 5)
+    page = request.GET.get('page')
+    lista = paginator.get_page(page)
+    context = {'lista': lista,}
     return render(request,'visualizar.html', context)
      
 
@@ -65,14 +70,3 @@ def deletar(request, pk):
     emprestimo = Emprestimo.objects.get(id=pk)
     emprestimo.delete()
     return redirect('visualizar')
-
-""" def deletar(request, pk):
-    emprestimo = Emprestimo.objects.get(id=pk)
-    context = {'emprestimo': emprestimo }
-
-    if request.method =='POST':
-        emprestimo.delete()
-        return redirect('cadastro:visualizar')
-    return render(request, 'deletar.html', context)
-
- """
