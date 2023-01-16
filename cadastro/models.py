@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class Cliente(models.Model):
@@ -35,8 +36,9 @@ class Emprestimo(models.Model):
     cliente = models.ForeignKey(Cliente,verbose_name='Nome do Cliente', on_delete=models.CASCADE)
     livro = models.ForeignKey(Livro,verbose_name='Título/Autor do Livro', on_delete=models.CASCADE)
     data_retirada = models.DateField(verbose_name='Data de Retirada') 
-    data_entrega_prevista = models.DateField(verbose_name='Previsão Entrega')
+    data_entrega_prevista = models.DateField(verbose_name='Previsão para Devolução')
     observacao = models.TextField(verbose_name='Observação', blank=True)
+    devolvido = models.BooleanField(verbose_name='Devolvido', blank=True , default=False)
     
     def __str__(self):
         return f'{self.cliente()} - (Livro: {self.livro} - Data Retirada: {self.data_retirada})'
